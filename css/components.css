@@ -129,6 +129,58 @@
   line-height: var(--leading-normal);
 }
 
+.hero-phases {
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+  text-align: left;
+}
+
+.hero-phases-intro {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.hero-phases-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.hero-phases-list li {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
+  padding-left: var(--space-lg);
+  position: relative;
+}
+
+.hero-phases-list li::before {
+  content: counter(list-item);
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  top: 1px;
+}
+
+.hero-phases-outro {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
 .hero-cta-mini {
   display: inline-flex;
   align-items: center;

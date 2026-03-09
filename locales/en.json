@@ -3,10 +3,20 @@
     "title": "Davai — From Idea to Project"
   },
   "hero": {
-    "badge": "For Claude Code & Cursor",
+    "badge": "Framework for Claude Code & Cursor",
     "tagline": "From idea to project through dialogue.",
-    "description": "The open-source framework that turns your idea into a development-ready project — through AI-powered dialogue. You describe the idea, Davai makes the plan.",
-    "cta": "See how it works"
+    "description": "The open-source framework that turns your idea into a development-ready project.",
+    "cta": "See how it works",
+    "phases_intro": "Here's how it works — we go through 6 phases:",
+    "phases_list": [
+      "Figure out what we're building and for whom",
+      "Pick the right technologies",
+      "Set up development assistants",
+      "Break it down into concrete tasks",
+      "Define protection requirements",
+      "Assemble everything into a ready structure"
+    ],
+    "phases_outro": "At each step we discuss, I launch specialists to draft artifacts, and then we refine them together."
   },
   "demo": {
     "label": "Live Demo",

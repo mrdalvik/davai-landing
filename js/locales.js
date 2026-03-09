@@ -8,10 +8,20 @@ var EMBEDDED_LOCALES = {
       "title": "Davai — From Idea to Project"
     },
     "hero": {
-      "badge": "For Claude Code & Cursor",
+      "badge": "Framework for Claude Code & Cursor",
       "tagline": "From idea to project through dialogue.",
-      "description": "The open-source framework that turns your idea into a development-ready project — through AI-powered dialogue. You describe the idea, Davai makes the plan.",
-      "cta": "See how it works"
+      "description": "The open-source framework that turns your idea into a development-ready project.",
+      "cta": "See how it works",
+      "phases_intro": "Here's how it works — we go through 6 phases:",
+      "phases_list": [
+        "Figure out what we're building and for whom",
+        "Pick the right technologies",
+        "Set up development assistants",
+        "Break it down into concrete tasks",
+        "Define protection requirements",
+        "Assemble everything into a ready structure"
+      ],
+      "phases_outro": "At each step we discuss, I launch specialists to draft artifacts, and then we refine them together."
     },
     "demo": {
       "label": "Live Demo",
@@ -406,10 +416,20 @@ var EMBEDDED_LOCALES = {
       "title": "Davai — От идеи до проекта"
     },
     "hero": {
-      "badge": "Для Claude Code и Cursor",
+      "badge": "Фреймворк для Claude Code и Cursor",
       "tagline": "От идеи до проекта через диалог.",
-      "description": "Open-source фреймворк, который превращает идею в готовый к разработке проект — через диалог с AI. Вы описываете идею, Davai делает план.",
-      "cta": "Смотреть демо"
+      "description": "Open-source фреймворк, который превращает идею в готовый к разработке проект.",
+      "cta": "Смотреть демо",
+      "phases_intro": "Вот как это работает — мы проходим 6 фаз:",
+      "phases_list": [
+        "Разбираемся, что строим и для кого",
+        "Подбираем технологии",
+        "Настраиваем помощников для разработки",
+        "Разбиваем на конкретные задачи",
+        "Определяем требования к защите",
+        "Собираем всё в готовую структуру"
+      ],
+      "phases_outro": "На каждом этапе мы обсуждаем, я запускаю специалистов для подготовки черновиков, а потом вместе доводим до ума."
     },
     "demo": {
       "label": "Демонстрация",
@@ -800,4 +820,3 @@ var EMBEDDED_LOCALES = {
     }
   }
 };
-

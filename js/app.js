@@ -76,6 +76,18 @@
     document.documentElement.setAttribute('lang', currentLang);
     var title = t('meta.title');
     if (title) document.title = title;
+
+    // Render phases list from array
+    var phasesList = document.getElementById('heroPhaseslist');
+    var phases = translations.hero && translations.hero.phases_list;
+    if (phasesList && Array.isArray(phases)) {
+      phasesList.innerHTML = '';
+      phases.forEach(function (text) {
+        var li = document.createElement('li');
+        li.textContent = text;
+        phasesList.appendChild(li);
+      });
+    }
   }
 
   function setLanguage(lang) {
