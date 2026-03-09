@@ -9,8 +9,8 @@ var EMBEDDED_LOCALES = {
   },
   "hero": {
     "badge": "For Claude Code & Cursor",
-    "tagline": "From idea to project. Automatically.",
-    "description": "The open-source framework that turns your idea into a development-ready project — through AI-powered dialogue. No planning expertise needed.",
+    "tagline": "From idea to project. Through dialogue.",
+    "description": "The open-source framework that turns your idea into a development-ready project — through AI-powered dialogue. You describe the idea, Davai makes the plan.",
     "cta": "See how it works"
   },
   "demo": {
@@ -139,7 +139,7 @@ var EMBEDDED_LOCALES = {
   },
   "features": {
     "label": "Why Davai",
-    "title": "Fast planning, solid start",
+    "title": "Planning like a pro",
     "speed": {
       "icon": "\uD83D\uDE80",
       "title": "Idea to Project in Minutes",
@@ -157,8 +157,8 @@ var EMBEDDED_LOCALES = {
     }
   },
   "cta": {
-    "title": "Start building",
-    "description": "Just tell your AI agent:",
+    "title": "Try it now",
+    "description": "Tell this to your AI agent:",
     "prompt_label": "You:",
     "prompt_text": "Install https://github.com/mrdalvik/davai.git and let\u2019s make a project",
     "or": "or clone manually:",
@@ -177,8 +177,8 @@ var EMBEDDED_LOCALES = {
   },
   "hero": {
     "badge": "Для Claude Code и Cursor",
-    "tagline": "От идеи до проекта. Автоматически.",
-    "description": "Open-source фреймворк, который превращает идею в готовый к разработке проект — через диалог с AI. Не нужно разбираться в методологиях планирования.",
+    "tagline": "От идеи до проекта. Через диалог.",
+    "description": "Open-source фреймворк, который превращает идею в готовый к разработке проект — через диалог с AI. Вы описываете идею, Davai делает план.",
     "cta": "Смотреть демо"
   },
   "demo": {
@@ -307,7 +307,7 @@ var EMBEDDED_LOCALES = {
   },
   "features": {
     "label": "Почему Davai",
-    "title": "Быстрое планирование, надёжный старт",
+    "title": "Планирование как у профи",
     "speed": {
       "icon": "\uD83D\uDE80",
       "title": "От идеи до проекта за минуты",
@@ -325,8 +325,8 @@ var EMBEDDED_LOCALES = {
     }
   },
   "cta": {
-    "title": "Начать",
-    "description": "Просто скажите своему AI-агенту:",
+    "title": "Попробуйте сейчас",
+    "description": "Скажите это своему AI-агенту:",
     "prompt_label": "Вы:",
     "prompt_text": "Установи https://github.com/mrdalvik/davai.git и давай сделаем проект",
     "or": "или клонируйте вручную:",

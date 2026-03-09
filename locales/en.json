@@ -4,8 +4,8 @@
   },
   "hero": {
     "badge": "For Claude Code & Cursor",
-    "tagline": "From idea to project. Automatically.",
-    "description": "The open-source framework that turns your idea into a development-ready project — through AI-powered dialogue. No planning expertise needed.",
+    "tagline": "From idea to project. Through dialogue.",
+    "description": "The open-source framework that turns your idea into a development-ready project — through AI-powered dialogue. You describe the idea, Davai makes the plan.",
     "cta": "See how it works"
   },
   "demo": {
@@ -134,7 +134,7 @@
   },
   "features": {
     "label": "Why Davai",
-    "title": "Fast planning, solid start",
+    "title": "Planning like a pro",
     "speed": {
       "icon": "\uD83D\uDE80",
       "title": "Idea to Project in Minutes",
@@ -152,8 +152,8 @@
     }
   },
   "cta": {
-    "title": "Start building",
-    "description": "Just tell your AI agent:",
+    "title": "Try it now",
+    "description": "Tell this to your AI agent:",
     "prompt_label": "You:",
     "prompt_text": "Install https://github.com/mrdalvik/davai.git and let\u2019s make a project",
     "or": "or clone manually:",
