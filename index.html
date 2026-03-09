@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Davai — From Idea to Project</title>
+  <meta name="description" content="The framework that turns your idea into a structured, development-ready project through AI-powered dialogue.">
+  <!-- CSP: enforced in production. On file:// this meta-tag is ignored by browsers. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self';">
+  <meta name="referrer" content="no-referrer">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Davai — From Idea to Project">
+  <meta property="og:description" content="AI-powered framework that turns ideas into development-ready projects.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/demo.css">
+
+  <!-- Scripts -->
+  <script src="js/locales.js"></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- ── Header ── -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="/" class="header-logo" aria-label="Davai">davai<span>_</span></a>
+        <div class="header-controls">
+          <div class="lang-switcher">
+            <button class="lang-btn" id="langToggle" aria-label="Change language" aria-expanded="false">
+              <span id="currentLang">EN</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="lang-dropdown" id="langDropdown" role="listbox">
+              <button class="lang-option active" data-lang="en" role="option">English</button>
+              <button class="lang-option" data-lang="ru" role="option">Русский</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Main Content ── -->
+    <main>
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-badge reveal">
+            <span class="dot"></span>
+            <span data-i18n="hero.badge">Works with Claude Code &amp; Cursor</span>
+          </div>
+          <h1 class="hero-title reveal">DAVAI</h1>
+          <p class="hero-tagline reveal" data-i18n="hero.tagline">From idea to project. Automatically.</p>
+          <p class="hero-description reveal" data-i18n="hero.description">The open-source framework that turns your idea into a structured, development-ready project through AI-powered dialogue. Works with Claude Code and Cursor. No planning expertise needed.</p>
+          <a href="#demo" class="hero-cta-mini reveal" onclick="event.preventDefault(); document.getElementById('demo').scrollIntoView({behavior:'smooth'}); history.replaceState(null,null,' ')">
+            <span data-i18n="hero.cta">See how it works</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Demo -->
+      <section class="demo-section" id="demo">
+        <div class="section-inner">
+          <div class="demo-container reveal">
+            <p class="section-label" data-i18n="demo.label">Live Demo</p>
+            <h2 class="section-title" data-i18n="demo.title">See it in action</h2>
+
+            <!-- Phase Navigation -->
+            <nav class="demo-phases" aria-label="Demo phases">
+              <button class="phase-btn active" data-phase="0">
+                <span class="phase-num">1</span>
+                <span class="phase-label" data-i18n="demo.phase1">Product</span>
+              </button>
+              <span class="phase-connector"></span>
+              <button class="phase-btn" data-phase="1">
+                <span class="phase-num">2</span>
+                <span class="phase-label" data-i18n="demo.phase2">Stack</span>
+              </button>
+              <span class="phase-connector"></span>
+              <button class="phase-btn" data-phase="2">
+                <span class="phase-num">3</span>
+                <span class="phase-label" data-i18n="demo.phase3">Tools</span>
+              </button>
+              <span class="phase-connector"></span>
+              <button class="phase-btn" data-phase="3">
+                <span class="phase-num">4</span>
+                <span class="phase-label" data-i18n="demo.phase4">Architecture</span>
+              </button>
+              <span class="phase-connector"></span>
+              <button class="phase-btn" data-phase="4">
+                <span class="phase-num">5</span>
+                <span class="phase-label" data-i18n="demo.phase5">Security</span>
+              </button>
+              <span class="phase-connector"></span>
+              <button class="phase-btn" data-phase="5">
+                <span class="phase-num">6</span>
+                <span class="phase-label" data-i18n="demo.phase6">Build</span>
+              </button>
+            </nav>
+
+            <!-- Terminal -->
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot red"></span>
+                  <span class="terminal-dot yellow"></span>
+                  <span class="terminal-dot green"></span>
+                </div>
+                <span class="terminal-title">davai — ~/url-shortener</span>
+                <div class="terminal-actions"></div>
+              </div>
+              <div class="terminal-body" id="terminalBody">
+                <!-- Lines injected by demo.js -->
+              </div>
+              <div class="terminal-status">
+                <div class="terminal-status-left">
+                  <span class="status-indicator running" id="statusDot"></span>
+                  <span id="statusText" data-i18n="demo.status.running">Running pipeline...</span>
+                </div>
+                <span id="phaseCounter">Phase 1/6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Artifacts -->
+      <section class="artifacts-section" id="artifacts">
+        <div class="section-inner">
+          <div class="artifacts-container reveal">
+            <p class="section-label" data-i18n="artifacts.label">Result</p>
+            <h2 class="section-title" data-i18n="artifacts.title">Development-ready project plan</h2>
+
+            <div class="artifacts-layout">
+              <!-- Finder sidebar -->
+              <div class="finder-window">
+                <div class="finder-header">
+                  <div class="finder-dots">
+                    <span class="finder-dot red"></span>
+                    <span class="finder-dot yellow"></span>
+                    <span class="finder-dot green"></span>
+                  </div>
+                  <span class="finder-path">url-shortener / memory-bank</span>
+                  <div class="finder-actions"></div>
+                </div>
+                <div class="finder-body">
+                  <div class="finder-item active" data-preview="preview-1">
+                    <span class="finder-icon">📄</span>
+                    <span class="finder-name">1-product-specification.md</span>
+                  </div>
+                  <div class="finder-item" data-preview="preview-2">
+                    <span class="finder-icon">📄</span>
+                    <span class="finder-name">2-tech-stack.md</span>
+                  </div>
+                  <div class="finder-item" data-preview="preview-3">
+                    <span class="finder-icon">📄</span>
+                    <span class="finder-name">3-required-ai-tools.md</span>
+                  </div>
+                  <div class="finder-item" data-preview="preview-4">
+                    <span class="finder-icon">📄</span>
+                    <span class="finder-name">4-implementation-plan.md</span>
+                  </div>
+                  <div class="finder-item" data-preview="preview-5">
+                    <span class="finder-icon">📄</span>
+                    <span class="finder-name">5-security-requirements.md</span>
+                  </div>
+                  <div class="finder-item" data-preview="preview-6">
+                    <span class="finder-icon">📄</span>
+                    <span class="finder-name">6-progress.md</span>
+                  </div>
+                  <div class="finder-item" data-preview="preview-7">
+                    <span class="finder-icon">⚙️</span>
+                    <span class="finder-name">CLAUDE.md</span>
+                  </div>
+                </div>
+                <div class="finder-footer">
+                  <span>7 items</span>
+                </div>
+              </div>
+
+              <!-- Preview panel -->
+              <div class="preview-window">
+                <div class="preview-header">
+                  <span class="preview-filename" id="previewFilename">1-product-specification.md</span>
+                </div>
+                <div class="preview-body" id="previewBody">
+                  <div class="preview-content active" id="preview-1">
+                    <pre><code><span class="md-h1"># Product Specification: URL Shortener</span>
+
+<span class="md-h2">## Problem</span>
+Marketing teams need branded short links with
+click analytics. Existing tools are expensive
+or lack custom alias support.
+
+<span class="md-h2">## MVP Features</span>
+
+<span class="md-h3">### Must Have</span>
+<span class="md-li">1.</span> Custom short aliases (brand.co/launch)
+<span class="md-li">2.</span> Click tracking with geo &amp; referrer
+<span class="md-li">3.</span> Dashboard with real-time analytics
+<span class="md-li">4.</span> User auth (email + password)
+
+<span class="md-h3">### Won't Have (v1)</span>
+<span class="md-dim">- Team workspaces</span>
+<span class="md-dim">- Public API</span>
+<span class="md-dim">- Custom domains</span></code></pre>
+                  </div>
+                  <div class="preview-content" id="preview-2">
+                    <pre><code><span class="md-h1"># Tech Stack: URL Shortener</span>
+
+<span class="md-h2">## Recommended Stack</span>
+
+<span class="md-label">Runtime:</span>      Bun 1.x
+<span class="md-label">Framework:</span>    Hono
+<span class="md-label">Database:</span>     PostgreSQL 16
+<span class="md-label">Cache:</span>        Redis (redirect hot path)
+<span class="md-label">Auth:</span>         JWT + refresh tokens
+<span class="md-label">Frontend:</span>     HTMX + Alpine.js
+
+<span class="md-h2">## Why Bun + Hono</span>
+<span class="md-dim">  speed: 9  DX: 9  ecosystem: 7</span>
+vs Node+Express:
+<span class="md-dim">  speed: 6  DX: 7  ecosystem: 10</span>
+
+Hono's middleware pattern fits the redirect
+hot path. Redis caching gives &lt;10ms redirects.</code></pre>
+                  </div>
+                  <div class="preview-content" id="preview-3">
+                    <pre><code><span class="md-h1"># Required AI Tools</span>
+
+<span class="md-h2">## Skills (from library)</span>
+<span class="md-success">✓</span> webapp-testing    <span class="md-dim">Playwright tests</span>
+<span class="md-success">✓</span> api-design        <span class="md-dim">REST conventions</span>
+<span class="md-success">✓</span> db-migrations     <span class="md-dim">PostgreSQL schema</span>
+
+<span class="md-h2">## Custom Skills</span>
+<span class="md-accent">⚡</span> url-validation
+  <span class="md-dim">Validates destination URLs,</span>
+  <span class="md-dim">blocks malicious redirects,</span>
+  <span class="md-dim">checks URL reachability</span>
+
+<span class="md-h2">## MCP Servers</span>
+  <span class="md-dim">None required</span></code></pre>
+                  </div>
+                  <div class="preview-content" id="preview-4">
+                    <pre><code><span class="md-h1"># Implementation Plan</span>
+
+<span class="md-h2">## Tasks (10)</span>
+
+<span class="md-label">Task 1:</span> Database schema
+  <span class="md-dim">users, links, clicks tables</span>
+  <span class="md-dim">Done: migrations run, seed works</span>
+
+<span class="md-label">Task 2:</span> Auth module
+  <span class="md-dim">JWT + refresh, register/login</span>
+  <span class="md-dim">Done: tests pass, tokens rotate</span>
+
+<span class="md-label">Task 3:</span> POST /api/shorten
+  <span class="md-dim">Create short link, custom alias</span>
+  <span class="md-dim">Done: returns short URL, 409 on dup</span>
+
+<span class="md-label">Task 4:</span> GET /:code redirect
+  <span class="md-dim">Redis cache, &lt;10ms response</span>
+
+<span class="md-dim">  ...6 more tasks</span></code></pre>
+                  </div>
+                  <div class="preview-content" id="preview-5">
+                    <pre><code><span class="md-h1"># Security Requirements</span>
+
+<span class="md-h2">## Threat Model</span>
+
+<span class="md-warn">⚠</span> <span class="md-label">Open redirect</span>
+  <span class="md-dim">Validate destination URLs against</span>
+  <span class="md-dim">allowlist, block javascript: URIs</span>
+
+<span class="md-warn">⚠</span> <span class="md-label">Brute-force short codes</span>
+  <span class="md-dim">Rate limit: 60 req/min per IP</span>
+  <span class="md-dim">Minimum code length: 6 chars</span>
+
+<span class="md-warn">⚠</span> <span class="md-label">SQL injection</span>
+  <span class="md-dim">Parameterized queries only</span>
+  <span class="md-dim">No raw SQL string concatenation</span>
+
+<span class="md-warn">⚠</span> <span class="md-label">Analytics privacy</span>
+  <span class="md-dim">Anonymize IPs, no fingerprinting</span></code></pre>
+                  </div>
+                  <div class="preview-content" id="preview-6">
+                    <pre><code><span class="md-h1"># Progress</span>
+
+<span class="md-success">✓</span> Phase 1: Product Specification
+<span class="md-success">✓</span> Phase 2: Tech Stack
+<span class="md-success">✓</span> Phase 3: AI Tools &amp; Skills
+<span class="md-success">✓</span> Phase 4: Architecture &amp; Plan
+<span class="md-success">✓</span> Phase 5: Security Requirements
+<span class="md-accent">→</span> Phase 6: Build project
+
+<span class="md-dim">All artifacts generated.</span>
+<span class="md-dim">Ready for implementation.</span></code></pre>
+                  </div>
+                  <div class="preview-content" id="preview-7">
+                    <pre><code><span class="md-h1"># URL Shortener</span>
+
+<span class="md-h2">## Context</span>
+<span class="md-dim">@memory-bank/1-product-specification.md</span>
+<span class="md-dim">@memory-bank/2-tech-stack.md</span>
+<span class="md-dim">@memory-bank/3-required-ai-tools.md</span>
+<span class="md-dim">@memory-bank/4-implementation-plan.md</span>
+<span class="md-dim">@memory-bank/5-security-requirements.md</span>
+
+<span class="md-h2">## Commands</span>
+<span class="md-label">Run:</span>    bun run dev
+<span class="md-label">Test:</span>   bun test
+<span class="md-label">Build:</span>  bun run build</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="features-section" id="features">
+        <div class="section-inner">
+          <p class="section-label reveal" data-i18n="features.label">Why Davai</p>
+          <h2 class="section-title reveal" data-i18n="features.title">Ship faster, plan smarter</h2>
+
+          <div class="features-grid">
+            <div class="feature-card reveal">
+              <div class="feature-icon" data-i18n="features.speed.icon">&#x1F680;</div>
+              <h3 class="feature-title" data-i18n="features.speed.title">Idea to Project in Minutes</h3>
+              <p class="feature-description" data-i18n="features.speed.description">5-phase pipeline: product spec, tech stack, tools, architecture, security. All through natural conversation with AI.</p>
+            </div>
+
+            <div class="feature-card reveal">
+              <div class="feature-icon" data-i18n="features.stack.icon">&#x1F9E9;</div>
+              <h3 class="feature-title" data-i18n="features.stack.title">Smart Stack Selection</h3>
+              <p class="feature-description" data-i18n="features.stack.description">AI tech lead evaluates options and picks the optimal tools for your specific project. With clear reasoning for each choice.</p>
+            </div>
+
+            <div class="feature-card reveal">
+              <div class="feature-icon" data-i18n="features.security.icon">&#x1F6E1;</div>
+              <h3 class="feature-title" data-i18n="features.security.title">Security Built In</h3>
+              <p class="feature-description" data-i18n="features.security.description">Automated threat modeling and security requirements. Catches what you would miss — before the first line of code.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-section" id="cta">
+        <div class="section-inner reveal">
+          <h2 class="cta-title" data-i18n="cta.title">Start building</h2>
+          <p class="cta-description" data-i18n="cta.description">Just tell your AI agent:</p>
+          <div class="cta-block cta-block--prompt">
+            <code class="cta-command cta-command--prompt"><span data-i18n="cta.prompt_text">Install https://github.com/mrdalvik/davai.git and let's make a project</span></code>
+            <button class="cta-copy-btn" id="copyPromptBtn" aria-label="Copy prompt">
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span data-i18n="cta.copy">Copy</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p class="footer-left">
+          <span data-i18n="footer.built_by">Built by</span>
+          <a href="https://github.com/mrdalvik" target="_blank" rel="noopener noreferrer">Lev Tregubov</a>
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/mrdalvik/davai" target="_blank" rel="noopener noreferrer" data-i18n="footer.source">Source</a>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <span data-i18n="footer.meta">This landing page was built with Davai + Claude Code</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

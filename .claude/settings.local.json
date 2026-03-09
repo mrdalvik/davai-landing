@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl:*)",
+      "Bash(do python3:*)",
+      "Bash(python3:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python3.10:*)",
+      "Bash(/tmp/test_404.py:*)",
+      "Bash(/Users/lev/personal-projects/davai/installed/projects/davai-landing/favicon.svg:*)",
+      "Bash(node:*)",
+      "Bash(do echo:*)",
+      "Bash(git:*)",
+      "Bash(.gitignore:*)"
+    ]
+  }
+}
