@@ -39,16 +39,16 @@
           { "type": "blank" },
           { "text": "\uD83E\uDD16 CEO: Tell me your idea — what problem are you solving?", "type": "ai", "typed": true },
           { "type": "blank" },
-          { "text": "You: URL shortener with click analytics for marketers", "type": "user", "typed": true },
+          { "text": "You: I want to build my own URL shortener for marketing", "type": "user", "typed": true },
           { "type": "blank" },
-          { "text": "\uD83E\uDD16 CEO: Who's the target user? Need custom aliases?", "type": "ai", "typed": true },
-          { "text": "You: Marketing teams. Yes — custom aliases + click tracking", "type": "user", "typed": true },
+          { "text": "\uD83E\uDD16 CEO: What's wrong with existing tools? Who's the target user?", "type": "ai", "typed": true },
+          { "text": "You: Need full data control. Marketing manager, tracks article clicks", "type": "user", "typed": true },
           { "type": "blank" },
-          { "text": "\uD83E\uDD16 CEO: What's NOT in the MVP?", "type": "ai", "typed": true },
-          { "text": "You: No team features, no public API for now", "type": "user", "typed": true },
+          { "text": "\uD83E\uDD16 CEO: Custom aliases? UTM tags? What's NOT in MVP?", "type": "ai", "typed": true },
+          { "text": "You: Yes aliases + UTM + A/B testing. No teams, no public API", "type": "user", "typed": true },
           { "type": "blank" },
           { "text": "\u26A1 Launching product-designer agent...", "type": "accent" },
-          { "text": "\u2713 Product specification ready — 4 must-have features defined", "type": "success" }
+          { "text": "\u2713 Product specification ready — 6 must-have features defined", "type": "success" }
         ]
       },
       {
@@ -57,13 +57,13 @@
           { "type": "blank" },
           { "text": "\u26A1 Launching tech-lead agent...", "type": "accent" },
           { "type": "blank" },
-          { "text": "\uD83D\uDCCB Evaluating 3 stack options:", "type": "dim" },
-          { "text": "  \u2192 Bun + Hono        speed: 9  DX: 9  ecosystem: 7", "type": "dim" },
-          { "text": "  \u2192 Node + Express    speed: 6  DX: 7  ecosystem: 10", "type": "dim" },
-          { "text": "  \u2192 Deno + Oak        speed: 8  DX: 7  ecosystem: 5", "type": "dim" },
+          { "text": "\uD83D\uDCCB Evaluating stack options:", "type": "dim" },
+          { "text": "  \u2192 Go + Chi          perf: 10  deploy: 10  DX: 8", "type": "dim" },
+          { "text": "  \u2192 Node + Express    perf: 6   deploy: 7   DX: 9", "type": "dim" },
+          { "text": "  \u2192 Rust + Actix      perf: 10  deploy: 8   DX: 5", "type": "dim" },
           { "type": "blank" },
-          { "text": "\u2713 Recommended: Bun + Hono + PostgreSQL + Redis", "type": "success" },
-          { "text": "\u2713 Tech stack document ready", "type": "success" }
+          { "text": "\u2713 Go wins: native speed for redirect hot path, single binary", "type": "success" },
+          { "text": "\u2713 Stack: Go + Chi + PostgreSQL + React + shadcn/ui", "type": "success" }
         ]
       },
       {
@@ -73,13 +73,13 @@
           { "text": "\u26A1 Launching ai-hr agent...", "type": "accent" },
           { "type": "blank" },
           { "text": "\uD83D\uDCE6 Scanning skills library...", "type": "dim" },
-          { "text": "  \u2192 webapp-testing    \u2713 match (Playwright integration tests)", "type": "success" },
-          { "text": "  \u2192 api-design        \u2713 match (REST API conventions)", "type": "success" },
-          { "text": "  \u2192 db-migrations     \u2713 match (PostgreSQL schema management)", "type": "success" },
+          { "text": "  \u2192 frontend-design   \u2713 match (shadcn/ui + Tailwind)", "type": "success" },
+          { "text": "  \u2192 webapp-testing    \u2713 match (Playwright e2e)", "type": "success" },
           { "type": "blank" },
-          { "text": "\uD83D\uDD27 Creating custom skill: url-validation", "type": "accent" },
+          { "text": "\uD83D\uDD27 Creating 3 custom skills:", "type": "accent" },
+          { "text": "  go-api-conventions, link-management, analytics-patterns", "type": "dim" },
           { "type": "blank" },
-          { "text": "\u2713 4 skills configured, 0 MCP servers needed", "type": "success" }
+          { "text": "\u2713 5 skills configured, 0 MCP servers needed", "type": "success" }
         ]
       },
       {
@@ -89,14 +89,14 @@
           { "text": "\u26A1 Launching architect agent...", "type": "accent" },
           { "type": "blank" },
           { "text": "\uD83D\uDCD0 Designing system architecture...", "type": "dim" },
-          { "text": "  Task 1: Database schema — users, links, clicks", "type": "dim" },
-          { "text": "  Task 2: Auth module — JWT + refresh tokens", "type": "dim" },
-          { "text": "  Task 3: Link shortening API — POST /api/shorten", "type": "dim" },
-          { "text": "  Task 4: Redirect handler — GET /:code (< 10ms)", "type": "dim" },
-          { "text": "  Task 5: Analytics collector — async click tracking", "type": "dim" },
-          { "text": "  ...5 more tasks", "type": "dim" },
+          { "text": "  Task 1: Go project + Docker + PostgreSQL", "type": "dim" },
+          { "text": "  Task 2: DB migrations — users, links, clicks", "type": "dim" },
+          { "text": "  Task 4: Auth API — bcrypt + JWT", "type": "dim" },
+          { "text": "  Task 6: Redirect handler — GET /:alias", "type": "dim" },
+          { "text": "  Task 9: A/B testing — weighted variant selection", "type": "dim" },
+          { "text": "  ...13 more tasks", "type": "dim" },
           { "type": "blank" },
-          { "text": "\u2713 10 tasks with definitions of done", "type": "success" }
+          { "text": "\u2713 18 tasks with definitions of done", "type": "success" }
         ]
       },
       {
@@ -106,13 +106,13 @@
           { "text": "\u26A1 Launching security-specialist agent...", "type": "accent" },
           { "type": "blank" },
           { "text": "\uD83D\uDD0D Threat modeling...", "type": "dim" },
-          { "text": "  \u26A0 Open redirect vulnerability — URL validation required", "type": "warning" },
-          { "text": "  \u26A0 Rate limiting needed — prevent brute-force on short codes", "type": "warning" },
-          { "text": "  \u26A0 SQL injection surface — parameterized queries enforced", "type": "warning" },
-          { "text": "  \u26A0 Analytics data privacy — IP anonymization required", "type": "warning" },
+          { "text": "  \u26A0 Open redirect — destination URL validation required", "type": "warning" },
+          { "text": "  \u26A0 Brute-force — rate limit 5/min on login", "type": "warning" },
+          { "text": "  \u26A0 Click fraud — rate limit 100/sec on hot path", "type": "warning" },
+          { "text": "  \u26A0 IP privacy — configurable retention TTL", "type": "warning" },
           { "type": "blank" },
           { "text": "\u2713 4 threats identified, mitigations defined", "type": "success" },
-          { "text": "\u2713 Security checklist integrated into implementation plan", "type": "success" }
+          { "text": "\u2713 18-item security checklist ready", "type": "success" }
         ]
       },
       {
@@ -122,15 +122,15 @@
           { "type": "blank" },
           { "text": "\uD83E\uDD16 Claude: I see a Davai project! Reading memory-bank...", "type": "ai", "typed": true },
           { "type": "blank" },
-          { "text": "\uD83D\uDCCB Product spec: URL shortener with analytics", "type": "dim" },
-          { "text": "\uD83D\uDCCB Tech stack: Bun + Hono + PostgreSQL + Redis", "type": "dim" },
-          { "text": "\uD83D\uDCCB Implementation plan: 10 tasks", "type": "dim" },
+          { "text": "\uD83D\uDCCB Product spec: URL shortener with A/B testing", "type": "dim" },
+          { "text": "\uD83D\uDCCB Tech stack: Go + Chi + PostgreSQL + React", "type": "dim" },
+          { "text": "\uD83D\uDCCB Implementation plan: 18 tasks", "type": "dim" },
           { "type": "blank" },
           { "text": "You: Build the project according to the plan", "type": "user", "typed": true },
           { "type": "blank" },
-          { "text": "\uD83E\uDD16 Claude: Starting task 1 of 10 — database schema...", "type": "ai", "typed": true },
-          { "text": "  \u2713 Created migrations/001_init.sql", "type": "success" },
-          { "text": "  \u2713 Created src/db/schema.ts", "type": "success" },
+          { "text": "\uD83E\uDD16 Claude: Starting task 1 of 18 — project init...", "type": "ai", "typed": true },
+          { "text": "  \u2713 Created cmd/server/main.go", "type": "success" },
+          { "text": "  \u2713 Created docker-compose.yml", "type": "success" },
           { "text": "  \u2713 Task 1 complete. Moving to task 2...", "type": "success" },
           { "type": "blank" },
           { "text": "\uD83C\uDF89 Your project is being built — task by task, file by file.", "type": "bold" }

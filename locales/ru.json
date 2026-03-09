@@ -37,18 +37,18 @@
         "lines": [
           { "text": "> davai start", "type": "cmd", "typed": true },
           { "type": "blank" },
-          { "text": "\uD83E\uDD16 CEO: Расскажите вашу идею — какую проблему решаете?", "type": "ai", "typed": true },
+          { "text": "\uD83E\uDD16 CEO: Расскажите идею — какую проблему решаете?", "type": "ai", "typed": true },
           { "type": "blank" },
-          { "text": "Вы: Сокращатель ссылок с аналитикой кликов для маркетологов", "type": "user", "typed": true },
+          { "text": "Вы: Хочу сделать свой сокращатель ссылок для маркетинга", "type": "user", "typed": true },
           { "type": "blank" },
-          { "text": "\uD83E\uDD16 CEO: Кто целевой пользователь? Нужны кастомные алиасы?", "type": "ai", "typed": true },
-          { "text": "Вы: Маркетинговые команды. Да — кастомные алиасы + трекинг кликов", "type": "user", "typed": true },
+          { "text": "\uD83E\uDD16 CEO: Чем не устраивают аналоги? Кто целевой пользователь?", "type": "ai", "typed": true },
+          { "text": "Вы: Нужен полный контроль данных. Маркетинг-менеджер, считает клики", "type": "user", "typed": true },
           { "type": "blank" },
-          { "text": "\uD83E\uDD16 CEO: Что НЕ входит в MVP?", "type": "ai", "typed": true },
-          { "text": "Вы: Без командных функций, без публичного API пока", "type": "user", "typed": true },
+          { "text": "\uD83E\uDD16 CEO: Кастомные алиасы? UTM? Что НЕ в MVP?", "type": "ai", "typed": true },
+          { "text": "Вы: Да алиасы + UTM + A/B тесты. Без команд, без публичного API", "type": "user", "typed": true },
           { "type": "blank" },
           { "text": "\u26A1 Запускаю агента product-designer...", "type": "accent" },
-          { "text": "\u2713 Спецификация продукта готова — 4 must-have фичи определены", "type": "success" }
+          { "text": "\u2713 Спецификация готова — 6 must-have фич определены", "type": "success" }
         ]
       },
       {
@@ -57,13 +57,13 @@
           { "type": "blank" },
           { "text": "\u26A1 Запускаю агента tech-lead...", "type": "accent" },
           { "type": "blank" },
-          { "text": "\uD83D\uDCCB Оценка 3 вариантов стека:", "type": "dim" },
-          { "text": "  \u2192 Bun + Hono        скорость: 9  DX: 9  экосистема: 7", "type": "dim" },
-          { "text": "  \u2192 Node + Express    скорость: 6  DX: 7  экосистема: 10", "type": "dim" },
-          { "text": "  \u2192 Deno + Oak        скорость: 8  DX: 7  экосистема: 5", "type": "dim" },
+          { "text": "\uD83D\uDCCB Оценка вариантов стека:", "type": "dim" },
+          { "text": "  \u2192 Go + Chi          перф: 10  деплой: 10  DX: 8", "type": "dim" },
+          { "text": "  \u2192 Node + Express    перф: 6   деплой: 7   DX: 9", "type": "dim" },
+          { "text": "  \u2192 Rust + Actix      перф: 10  деплой: 8   DX: 5", "type": "dim" },
           { "type": "blank" },
-          { "text": "\u2713 Рекомендация: Bun + Hono + PostgreSQL + Redis", "type": "success" },
-          { "text": "\u2713 Документ по стеку технологий готов", "type": "success" }
+          { "text": "\u2713 Go: нативная скорость для редиректа, один бинарник", "type": "success" },
+          { "text": "\u2713 Стек: Go + Chi + PostgreSQL + React + shadcn/ui", "type": "success" }
         ]
       },
       {
@@ -73,13 +73,13 @@
           { "text": "\u26A1 Запускаю агента ai-hr...", "type": "accent" },
           { "type": "blank" },
           { "text": "\uD83D\uDCE6 Сканирую библиотеку скиллов...", "type": "dim" },
-          { "text": "  \u2192 webapp-testing    \u2713 подходит (интеграционные тесты Playwright)", "type": "success" },
-          { "text": "  \u2192 api-design        \u2713 подходит (конвенции REST API)", "type": "success" },
-          { "text": "  \u2192 db-migrations     \u2713 подходит (управление схемой PostgreSQL)", "type": "success" },
+          { "text": "  \u2192 frontend-design   \u2713 подходит (shadcn/ui + Tailwind)", "type": "success" },
+          { "text": "  \u2192 webapp-testing    \u2713 подходит (Playwright e2e)", "type": "success" },
           { "type": "blank" },
-          { "text": "\uD83D\uDD27 Создаю кастомный скилл: url-validation", "type": "accent" },
+          { "text": "\uD83D\uDD27 Создаю 3 кастомных скилла:", "type": "accent" },
+          { "text": "  go-api-conventions, link-management, analytics-patterns", "type": "dim" },
           { "type": "blank" },
-          { "text": "\u2713 4 скилла настроены, 0 MCP-серверов нужно", "type": "success" }
+          { "text": "\u2713 5 скиллов настроены, 0 MCP-серверов нужно", "type": "success" }
         ]
       },
       {
@@ -88,15 +88,15 @@
           { "type": "blank" },
           { "text": "\u26A1 Запускаю агента architect...", "type": "accent" },
           { "type": "blank" },
-          { "text": "\uD83D\uDCD0 Проектирую архитектуру системы...", "type": "dim" },
-          { "text": "  Задача 1: Схема БД — users, links, clicks", "type": "dim" },
-          { "text": "  Задача 2: Модуль авторизации — JWT + refresh tokens", "type": "dim" },
-          { "text": "  Задача 3: API сокращения — POST /api/shorten", "type": "dim" },
-          { "text": "  Задача 4: Обработчик редиректа — GET /:code (< 10мс)", "type": "dim" },
-          { "text": "  Задача 5: Сборщик аналитики — async трекинг кликов", "type": "dim" },
-          { "text": "  ...ещё 5 задач", "type": "dim" },
+          { "text": "\uD83D\uDCD0 Проектирую архитектуру...", "type": "dim" },
+          { "text": "  Задача 1: Go-проект + Docker + PostgreSQL", "type": "dim" },
+          { "text": "  Задача 2: Миграции БД — users, links, clicks", "type": "dim" },
+          { "text": "  Задача 4: Auth API — bcrypt + JWT", "type": "dim" },
+          { "text": "  Задача 6: Редирект — GET /:alias", "type": "dim" },
+          { "text": "  Задача 9: A/B-тесты — выбор варианта по весам", "type": "dim" },
+          { "text": "  ...ещё 13 задач", "type": "dim" },
           { "type": "blank" },
-          { "text": "\u2713 10 задач с критериями готовности", "type": "success" }
+          { "text": "\u2713 18 задач с критериями готовности", "type": "success" }
         ]
       },
       {
@@ -106,13 +106,13 @@
           { "text": "\u26A1 Запускаю агента security-specialist...", "type": "accent" },
           { "type": "blank" },
           { "text": "\uD83D\uDD0D Моделирование угроз...", "type": "dim" },
-          { "text": "  \u26A0 Уязвимость open redirect — нужна валидация URL", "type": "warning" },
-          { "text": "  \u26A0 Нужен rate limiting — защита от перебора коротких кодов", "type": "warning" },
-          { "text": "  \u26A0 Поверхность SQL-инъекций — параметризованные запросы", "type": "warning" },
-          { "text": "  \u26A0 Приватность аналитики — анонимизация IP обязательна", "type": "warning" },
+          { "text": "  \u26A0 Open redirect — нужна валидация destination URL", "type": "warning" },
+          { "text": "  \u26A0 Brute-force — rate limit 5/мин на логин", "type": "warning" },
+          { "text": "  \u26A0 Флуд кликов — rate limit 100/сек на редирект", "type": "warning" },
+          { "text": "  \u26A0 Приватность IP — настраиваемый TTL хранения", "type": "warning" },
           { "type": "blank" },
           { "text": "\u2713 4 угрозы найдены, меры защиты определены", "type": "success" },
-          { "text": "\u2713 Чеклист безопасности интегрирован в план", "type": "success" }
+          { "text": "\u2713 Чеклист безопасности из 18 пунктов готов", "type": "success" }
         ]
       },
       {
@@ -122,18 +122,18 @@
           { "type": "blank" },
           { "text": "\uD83E\uDD16 Claude: Вижу проект Davai! Читаю memory-bank...", "type": "ai", "typed": true },
           { "type": "blank" },
-          { "text": "\uD83D\uDCCB Спецификация: сокращатель ссылок с аналитикой", "type": "dim" },
-          { "text": "\uD83D\uDCCB Стек: Bun + Hono + PostgreSQL + Redis", "type": "dim" },
-          { "text": "\uD83D\uDCCB План реализации: 10 задач", "type": "dim" },
+          { "text": "\uD83D\uDCCB Спецификация: сокращатель ссылок с A/B-тестами", "type": "dim" },
+          { "text": "\uD83D\uDCCB Стек: Go + Chi + PostgreSQL + React", "type": "dim" },
+          { "text": "\uD83D\uDCCB План реализации: 18 задач", "type": "dim" },
           { "type": "blank" },
           { "text": "Вы: Собери проект по плану", "type": "user", "typed": true },
           { "type": "blank" },
-          { "text": "\uD83E\uDD16 Claude: Начинаю задачу 1 из 10 — схема базы данных...", "type": "ai", "typed": true },
-          { "text": "  \u2713 Создан migrations/001_init.sql", "type": "success" },
-          { "text": "  \u2713 Создан src/db/schema.ts", "type": "success" },
-          { "text": "  \u2713 Задача 1 выполнена. Перехожу к задаче 2...", "type": "success" },
+          { "text": "\uD83E\uDD16 Claude: Начинаю задачу 1 из 18 — инициализация...", "type": "ai", "typed": true },
+          { "text": "  \u2713 Создан cmd/server/main.go", "type": "success" },
+          { "text": "  \u2713 Создан docker-compose.yml", "type": "success" },
+          { "text": "  \u2713 Задача 1 готова. Перехожу к задаче 2...", "type": "success" },
           { "type": "blank" },
-          { "text": "\uD83C\uDF89 Ваш проект собирается — задача за задачей, файл за файлом.", "type": "bold" }
+          { "text": "\uD83C\uDF89 Проект собирается — задача за задачей, файл за файлом.", "type": "bold" }
         ]
       }
     ]

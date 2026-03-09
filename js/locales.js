@@ -57,7 +57,7 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "You: URL shortener with click analytics for marketers",
+              "text": "You: I want to build my own URL shortener for marketing",
               "type": "user",
               "typed": true
             },
@@ -65,12 +65,12 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "🤖 CEO: Who's the target user? Need custom aliases?",
+              "text": "🤖 CEO: What's wrong with existing tools? Who's the target user?",
               "type": "ai",
               "typed": true
             },
             {
-              "text": "You: Marketing teams. Yes — custom aliases + click tracking",
+              "text": "You: Need full data control. Marketing manager, tracks article clicks",
               "type": "user",
               "typed": true
             },
@@ -78,12 +78,12 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "🤖 CEO: What's NOT in the MVP?",
+              "text": "🤖 CEO: Custom aliases? UTM tags? What's NOT in MVP?",
               "type": "ai",
               "typed": true
             },
             {
-              "text": "You: No team features, no public API for now",
+              "text": "You: Yes aliases + UTM + A/B testing. No teams, no public API",
               "type": "user",
               "typed": true
             },
@@ -95,7 +95,7 @@ var EMBEDDED_LOCALES = {
               "type": "accent"
             },
             {
-              "text": "✓ Product specification ready — 4 must-have features defined",
+              "text": "✓ Product specification ready — 6 must-have features defined",
               "type": "success"
             }
           ]
@@ -118,30 +118,30 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "📋 Evaluating 3 stack options:",
+              "text": "📋 Evaluating stack options:",
               "type": "dim"
             },
             {
-              "text": "  → Bun + Hono        speed: 9  DX: 9  ecosystem: 7",
+              "text": "  → Go + Chi          perf: 10  deploy: 10  DX: 8",
               "type": "dim"
             },
             {
-              "text": "  → Node + Express    speed: 6  DX: 7  ecosystem: 10",
+              "text": "  → Node + Express    perf: 6   deploy: 7   DX: 9",
               "type": "dim"
             },
             {
-              "text": "  → Deno + Oak        speed: 8  DX: 7  ecosystem: 5",
+              "text": "  → Rust + Actix      perf: 10  deploy: 8   DX: 5",
               "type": "dim"
             },
             {
               "type": "blank"
             },
             {
-              "text": "✓ Recommended: Bun + Hono + PostgreSQL + Redis",
+              "text": "✓ Go wins: native speed for redirect hot path, single binary",
               "type": "success"
             },
             {
-              "text": "✓ Tech stack document ready",
+              "text": "✓ Stack: Go + Chi + PostgreSQL + React + shadcn/ui",
               "type": "success"
             }
           ]
@@ -168,29 +168,29 @@ var EMBEDDED_LOCALES = {
               "type": "dim"
             },
             {
-              "text": "  → webapp-testing    ✓ match (Playwright integration tests)",
+              "text": "  → frontend-design   ✓ match (shadcn/ui + Tailwind)",
               "type": "success"
             },
             {
-              "text": "  → api-design        ✓ match (REST API conventions)",
-              "type": "success"
-            },
-            {
-              "text": "  → db-migrations     ✓ match (PostgreSQL schema management)",
+              "text": "  → webapp-testing    ✓ match (Playwright e2e)",
               "type": "success"
             },
             {
               "type": "blank"
             },
             {
-              "text": "🔧 Creating custom skill: url-validation",
+              "text": "🔧 Creating 3 custom skills:",
               "type": "accent"
             },
             {
+              "text": "  go-api-conventions, link-management, analytics-patterns",
+              "type": "dim"
+            },
+            {
               "type": "blank"
             },
             {
-              "text": "✓ 4 skills configured, 0 MCP servers needed",
+              "text": "✓ 5 skills configured, 0 MCP servers needed",
               "type": "success"
             }
           ]
@@ -217,34 +217,34 @@ var EMBEDDED_LOCALES = {
               "type": "dim"
             },
             {
-              "text": "  Task 1: Database schema — users, links, clicks",
+              "text": "  Task 1: Go project + Docker + PostgreSQL",
               "type": "dim"
             },
             {
-              "text": "  Task 2: Auth module — JWT + refresh tokens",
+              "text": "  Task 2: DB migrations — users, links, clicks",
               "type": "dim"
             },
             {
-              "text": "  Task 3: Link shortening API — POST /api/shorten",
+              "text": "  Task 4: Auth API — bcrypt + JWT",
               "type": "dim"
             },
             {
-              "text": "  Task 4: Redirect handler — GET /:code (< 10ms)",
+              "text": "  Task 6: Redirect handler — GET /:alias",
               "type": "dim"
             },
             {
-              "text": "  Task 5: Analytics collector — async click tracking",
+              "text": "  Task 9: A/B testing — weighted variant selection",
               "type": "dim"
             },
             {
-              "text": "  ...5 more tasks",
+              "text": "  ...13 more tasks",
               "type": "dim"
             },
             {
               "type": "blank"
             },
             {
-              "text": "✓ 10 tasks with definitions of done",
+              "text": "✓ 18 tasks with definitions of done",
               "type": "success"
             }
           ]
@@ -271,19 +271,19 @@ var EMBEDDED_LOCALES = {
               "type": "dim"
             },
             {
-              "text": "  ⚠ Open redirect vulnerability — URL validation required",
+              "text": "  ⚠ Open redirect — destination URL validation required",
               "type": "warning"
             },
             {
-              "text": "  ⚠ Rate limiting needed — prevent brute-force on short codes",
+              "text": "  ⚠ Brute-force — rate limit 5/min on login",
               "type": "warning"
             },
             {
-              "text": "  ⚠ SQL injection surface — parameterized queries enforced",
+              "text": "  ⚠ Click fraud — rate limit 100/sec on hot path",
               "type": "warning"
             },
             {
-              "text": "  ⚠ Analytics data privacy — IP anonymization required",
+              "text": "  ⚠ IP privacy — configurable retention TTL",
               "type": "warning"
             },
             {
@@ -294,7 +294,7 @@ var EMBEDDED_LOCALES = {
               "type": "success"
             },
             {
-              "text": "✓ Security checklist integrated into implementation plan",
+              "text": "✓ 18-item security checklist ready",
               "type": "success"
             }
           ]
@@ -323,15 +323,15 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "📋 Product spec: URL shortener with analytics",
+              "text": "📋 Product spec: URL shortener with A/B testing",
               "type": "dim"
             },
             {
-              "text": "📋 Tech stack: Bun + Hono + PostgreSQL + Redis",
+              "text": "📋 Tech stack: Go + Chi + PostgreSQL + React",
               "type": "dim"
             },
             {
-              "text": "📋 Implementation plan: 10 tasks",
+              "text": "📋 Implementation plan: 18 tasks",
               "type": "dim"
             },
             {
@@ -346,16 +346,16 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "🤖 Claude: Starting task 1 of 10 — database schema...",
+              "text": "🤖 Claude: Starting task 1 of 18 — project init...",
               "type": "ai",
               "typed": true
             },
             {
-              "text": "  ✓ Created migrations/001_init.sql",
+              "text": "  ✓ Created cmd/server/main.go",
               "type": "success"
             },
             {
-              "text": "  ✓ Created src/db/schema.ts",
+              "text": "  ✓ Created docker-compose.yml",
               "type": "success"
             },
             {
@@ -457,7 +457,7 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "🤖 CEO: Расскажите вашу идею — какую проблему решаете?",
+              "text": "🤖 CEO: Расскажите идею — какую проблему решаете?",
               "type": "ai",
               "typed": true
             },
@@ -465,7 +465,7 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "Вы: Сокращатель ссылок с аналитикой кликов для маркетологов",
+              "text": "Вы: Хочу сделать свой сокращатель ссылок для маркетинга",
               "type": "user",
               "typed": true
             },
@@ -473,12 +473,12 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "🤖 CEO: Кто целевой пользователь? Нужны кастомные алиасы?",
+              "text": "🤖 CEO: Чем не устраивают аналоги? Кто целевой пользователь?",
               "type": "ai",
               "typed": true
             },
             {
-              "text": "Вы: Маркетинговые команды. Да — кастомные алиасы + трекинг кликов",
+              "text": "Вы: Нужен полный контроль данных. Маркетинг-менеджер, считает клики",
               "type": "user",
               "typed": true
             },
@@ -486,12 +486,12 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "🤖 CEO: Что НЕ входит в MVP?",
+              "text": "🤖 CEO: Кастомные алиасы? UTM? Что НЕ в MVP?",
               "type": "ai",
               "typed": true
             },
             {
-              "text": "Вы: Без командных функций, без публичного API пока",
+              "text": "Вы: Да алиасы + UTM + A/B тесты. Без команд, без публичного API",
               "type": "user",
               "typed": true
             },
@@ -503,7 +503,7 @@ var EMBEDDED_LOCALES = {
               "type": "accent"
             },
             {
-              "text": "✓ Спецификация продукта готова — 4 must-have фичи определены",
+              "text": "✓ Спецификация готова — 6 must-have фич определены",
               "type": "success"
             }
           ]
@@ -526,30 +526,30 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "📋 Оценка 3 вариантов стека:",
+              "text": "📋 Оценка вариантов стека:",
               "type": "dim"
             },
             {
-              "text": "  → Bun + Hono        скорость: 9  DX: 9  экосистема: 7",
+              "text": "  → Go + Chi          перф: 10  деплой: 10  DX: 8",
               "type": "dim"
             },
             {
-              "text": "  → Node + Express    скорость: 6  DX: 7  экосистема: 10",
+              "text": "  → Node + Express    перф: 6   деплой: 7   DX: 9",
               "type": "dim"
             },
             {
-              "text": "  → Deno + Oak        скорость: 8  DX: 7  экосистема: 5",
+              "text": "  → Rust + Actix      перф: 10  деплой: 8   DX: 5",
               "type": "dim"
             },
             {
               "type": "blank"
             },
             {
-              "text": "✓ Рекомендация: Bun + Hono + PostgreSQL + Redis",
+              "text": "✓ Go: нативная скорость для редиректа, один бинарник",
               "type": "success"
             },
             {
-              "text": "✓ Документ по стеку технологий готов",
+              "text": "✓ Стек: Go + Chi + PostgreSQL + React + shadcn/ui",
               "type": "success"
             }
           ]
@@ -576,29 +576,29 @@ var EMBEDDED_LOCALES = {
               "type": "dim"
             },
             {
-              "text": "  → webapp-testing    ✓ подходит (интеграционные тесты Playwright)",
+              "text": "  → frontend-design   ✓ подходит (shadcn/ui + Tailwind)",
               "type": "success"
             },
             {
-              "text": "  → api-design        ✓ подходит (конвенции REST API)",
-              "type": "success"
-            },
-            {
-              "text": "  → db-migrations     ✓ подходит (управление схемой PostgreSQL)",
+              "text": "  → webapp-testing    ✓ подходит (Playwright e2e)",
               "type": "success"
             },
             {
               "type": "blank"
             },
             {
-              "text": "🔧 Создаю кастомный скилл: url-validation",
+              "text": "🔧 Создаю 3 кастомных скилла:",
               "type": "accent"
             },
             {
+              "text": "  go-api-conventions, link-management, analytics-patterns",
+              "type": "dim"
+            },
+            {
               "type": "blank"
             },
             {
-              "text": "✓ 4 скилла настроены, 0 MCP-серверов нужно",
+              "text": "✓ 5 скиллов настроены, 0 MCP-серверов нужно",
               "type": "success"
             }
           ]
@@ -621,38 +621,38 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "📐 Проектирую архитектуру системы...",
+              "text": "📐 Проектирую архитектуру...",
               "type": "dim"
             },
             {
-              "text": "  Задача 1: Схема БД — users, links, clicks",
+              "text": "  Задача 1: Go-проект + Docker + PostgreSQL",
               "type": "dim"
             },
             {
-              "text": "  Задача 2: Модуль авторизации — JWT + refresh tokens",
+              "text": "  Задача 2: Миграции БД — users, links, clicks",
               "type": "dim"
             },
             {
-              "text": "  Задача 3: API сокращения — POST /api/shorten",
+              "text": "  Задача 4: Auth API — bcrypt + JWT",
               "type": "dim"
             },
             {
-              "text": "  Задача 4: Обработчик редиректа — GET /:code (< 10мс)",
+              "text": "  Задача 6: Редирект — GET /:alias",
               "type": "dim"
             },
             {
-              "text": "  Задача 5: Сборщик аналитики — async трекинг кликов",
+              "text": "  Задача 9: A/B-тесты — выбор варианта по весам",
               "type": "dim"
             },
             {
-              "text": "  ...ещё 5 задач",
+              "text": "  ...ещё 13 задач",
               "type": "dim"
             },
             {
               "type": "blank"
             },
             {
-              "text": "✓ 10 задач с критериями готовности",
+              "text": "✓ 18 задач с критериями готовности",
               "type": "success"
             }
           ]
@@ -679,19 +679,19 @@ var EMBEDDED_LOCALES = {
               "type": "dim"
             },
             {
-              "text": "  ⚠ Уязвимость open redirect — нужна валидация URL",
+              "text": "  ⚠ Open redirect — нужна валидация destination URL",
               "type": "warning"
             },
             {
-              "text": "  ⚠ Нужен rate limiting — защита от перебора коротких кодов",
+              "text": "  ⚠ Brute-force — rate limit 5/мин на логин",
               "type": "warning"
             },
             {
-              "text": "  ⚠ Поверхность SQL-инъекций — параметризованные запросы",
+              "text": "  ⚠ Флуд кликов — rate limit 100/сек на редирект",
               "type": "warning"
             },
             {
-              "text": "  ⚠ Приватность аналитики — анонимизация IP обязательна",
+              "text": "  ⚠ Приватность IP — настраиваемый TTL хранения",
               "type": "warning"
             },
             {
@@ -702,7 +702,7 @@ var EMBEDDED_LOCALES = {
               "type": "success"
             },
             {
-              "text": "✓ Чеклист безопасности интегрирован в план",
+              "text": "✓ Чеклист безопасности из 18 пунктов готов",
               "type": "success"
             }
           ]
@@ -731,15 +731,15 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "📋 Спецификация: сокращатель ссылок с аналитикой",
+              "text": "📋 Спецификация: сокращатель ссылок с A/B-тестами",
               "type": "dim"
             },
             {
-              "text": "📋 Стек: Bun + Hono + PostgreSQL + Redis",
+              "text": "📋 Стек: Go + Chi + PostgreSQL + React",
               "type": "dim"
             },
             {
-              "text": "📋 План реализации: 10 задач",
+              "text": "📋 План реализации: 18 задач",
               "type": "dim"
             },
             {
@@ -754,27 +754,27 @@ var EMBEDDED_LOCALES = {
               "type": "blank"
             },
             {
-              "text": "🤖 Claude: Начинаю задачу 1 из 10 — схема базы данных...",
+              "text": "🤖 Claude: Начинаю задачу 1 из 18 — инициализация...",
               "type": "ai",
               "typed": true
             },
             {
-              "text": "  ✓ Создан migrations/001_init.sql",
+              "text": "  ✓ Создан cmd/server/main.go",
               "type": "success"
             },
             {
-              "text": "  ✓ Создан src/db/schema.ts",
+              "text": "  ✓ Создан docker-compose.yml",
               "type": "success"
             },
             {
-              "text": "  ✓ Задача 1 выполнена. Перехожу к задаче 2...",
+              "text": "  ✓ Задача 1 готова. Перехожу к задаче 2...",
               "type": "success"
             },
             {
               "type": "blank"
             },
             {
-              "text": "🎉 Ваш проект собирается — задача за задачей, файл за файлом.",
+              "text": "🎉 Проект собирается — задача за задачей, файл за файлом.",
               "type": "bold"
             }
           ]

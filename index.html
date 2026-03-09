@@ -202,20 +202,22 @@
                     <pre><code><span class="md-h1"># Product Specification: URL Shortener</span>
 
 <span class="md-h2">## Problem</span>
-Marketing teams need branded short links with
-click analytics. Existing tools are expensive
-or lack custom alias support.
+Marketing managers need to track article clicks
+with full data control. Bitly/Short.io are cloud-
+only, expensive, A/B testing locked behind enterprise.
 
 <span class="md-h2">## MVP Features</span>
 
 <span class="md-h3">### Must Have</span>
 <span class="md-li">1.</span> Custom short aliases (brand.co/launch)
-<span class="md-li">2.</span> Click tracking with geo &amp; referrer
-<span class="md-li">3.</span> Dashboard with real-time analytics
-<span class="md-li">4.</span> User auth (email + password)
+<span class="md-li">2.</span> Redirect with click recording
+<span class="md-li">3.</span> Click analytics (geo, device, referrer)
+<span class="md-li">4.</span> Auth (email + password)
+<span class="md-li">5.</span> UTM tags auto-appended to destination
+<span class="md-li">6.</span> A/B testing — split traffic by weight
 
 <span class="md-h3">### Won't Have (v1)</span>
-<span class="md-dim">- Team workspaces</span>
+<span class="md-dim">- Team features (roles, access)</span>
 <span class="md-dim">- Public API</span>
 <span class="md-dim">- Custom domains</span></code></pre>
                   </div>
@@ -224,59 +226,59 @@ or lack custom alias support.
 
 <span class="md-h2">## Recommended Stack</span>
 
-<span class="md-label">Runtime:</span>      Bun 1.x
-<span class="md-label">Framework:</span>    Hono
-<span class="md-label">Database:</span>     PostgreSQL 16
-<span class="md-label">Cache:</span>        Redis (redirect hot path)
-<span class="md-label">Auth:</span>         JWT + refresh tokens
-<span class="md-label">Frontend:</span>     HTMX + Alpine.js
+<span class="md-label">Backend:</span>     Go + Chi router
+<span class="md-label">Database:</span>    PostgreSQL + pgx driver
+<span class="md-label">Auth:</span>        bcrypt + JWT (httpOnly cookie)
+<span class="md-label">GeoIP:</span>       MaxMind GeoLite2 (embedded)
+<span class="md-label">Frontend:</span>    React + Vite + shadcn/ui
+<span class="md-label">Deploy:</span>      Docker multi-stage build
 
-<span class="md-h2">## Why Bun + Hono</span>
-<span class="md-dim">  speed: 9  DX: 9  ecosystem: 7</span>
-vs Node+Express:
-<span class="md-dim">  speed: 6  DX: 7  ecosystem: 10</span>
+<span class="md-h2">## Why Go</span>
+<span class="md-dim">  Go + Chi:       perf: 10  deploy: 10</span>
+<span class="md-dim">  Node + Express: perf: 6   deploy: 7</span>
 
-Hono's middleware pattern fits the redirect
-hot path. Redis caching gives &lt;10ms redirects.</code></pre>
+Single binary, native speed for redirect
+hot path. No Redis needed at MVP scale.</code></pre>
                   </div>
                   <div class="preview-content" id="preview-3">
                     <pre><code><span class="md-h1"># Required AI Tools</span>
 
 <span class="md-h2">## Skills (from library)</span>
-<span class="md-success">✓</span> webapp-testing    <span class="md-dim">Playwright tests</span>
-<span class="md-success">✓</span> api-design        <span class="md-dim">REST conventions</span>
-<span class="md-success">✓</span> db-migrations     <span class="md-dim">PostgreSQL schema</span>
+<span class="md-success">✓</span> frontend-design   <span class="md-dim">shadcn/ui + Tailwind</span>
+<span class="md-success">✓</span> webapp-testing    <span class="md-dim">Playwright e2e</span>
 
 <span class="md-h2">## Custom Skills</span>
-<span class="md-accent">⚡</span> url-validation
-  <span class="md-dim">Validates destination URLs,</span>
-  <span class="md-dim">blocks malicious redirects,</span>
-  <span class="md-dim">checks URL reachability</span>
+<span class="md-accent">⚡</span> go-api-conventions
+  <span class="md-dim">Chi handlers, pgx, JWT middleware</span>
+<span class="md-accent">⚡</span> link-management
+  <span class="md-dim">Aliases, UTM, A/B weight selection</span>
+<span class="md-accent">⚡</span> analytics-patterns
+  <span class="md-dim">Async clicks, SQL aggregations, Recharts</span>
 
 <span class="md-h2">## MCP Servers</span>
-  <span class="md-dim">None required</span></code></pre>
+  <span class="md-dim">None required (fully self-hosted)</span></code></pre>
                   </div>
                   <div class="preview-content" id="preview-4">
                     <pre><code><span class="md-h1"># Implementation Plan</span>
 
-<span class="md-h2">## Tasks (10)</span>
+<span class="md-h2">## Tasks (18)</span>
 
-<span class="md-label">Task 1:</span> Database schema
-  <span class="md-dim">users, links, clicks tables</span>
-  <span class="md-dim">Done: migrations run, seed works</span>
+<span class="md-label">Task 1:</span> Go project + Docker + PostgreSQL
+  <span class="md-dim">Done: docker compose up, GET /health 200</span>
 
-<span class="md-label">Task 2:</span> Auth module
-  <span class="md-dim">JWT + refresh, register/login</span>
-  <span class="md-dim">Done: tests pass, tokens rotate</span>
+<span class="md-label">Task 2:</span> DB migrations (goose)
+  <span class="md-dim">Done: users, links, variants, clicks</span>
 
-<span class="md-label">Task 3:</span> POST /api/shorten
-  <span class="md-dim">Create short link, custom alias</span>
-  <span class="md-dim">Done: returns short URL, 409 on dup</span>
+<span class="md-label">Task 4:</span> Auth API — bcrypt + JWT
+  <span class="md-dim">Done: register 201, login returns token</span>
 
-<span class="md-label">Task 4:</span> GET /:code redirect
-  <span class="md-dim">Redis cache, &lt;10ms response</span>
+<span class="md-label">Task 6:</span> GET /:alias redirect
+  <span class="md-dim">Done: HTTP 302, async click recording</span>
 
-<span class="md-dim">  ...6 more tasks</span></code></pre>
+<span class="md-label">Task 9:</span> A/B testing — weighted variants
+  <span class="md-dim">Done: 50/50 split, analytics per variant</span>
+
+<span class="md-dim">  ...13 more tasks</span></code></pre>
                   </div>
                   <div class="preview-content" id="preview-5">
                     <pre><code><span class="md-h1"># Security Requirements</span>
@@ -284,19 +286,19 @@ hot path. Redis caching gives &lt;10ms redirects.</code></pre>
 <span class="md-h2">## Threat Model</span>
 
 <span class="md-warn">⚠</span> <span class="md-label">Open redirect</span>
-  <span class="md-dim">Validate destination URLs against</span>
-  <span class="md-dim">allowlist, block javascript: URIs</span>
+  <span class="md-dim">Only http/https, block javascript:</span>
+  <span class="md-dim">Validate URL format, max 2048 chars</span>
 
-<span class="md-warn">⚠</span> <span class="md-label">Brute-force short codes</span>
-  <span class="md-dim">Rate limit: 60 req/min per IP</span>
-  <span class="md-dim">Minimum code length: 6 chars</span>
+<span class="md-warn">⚠</span> <span class="md-label">Brute-force auth</span>
+  <span class="md-dim">Rate limit: 5/min on login per IP</span>
+  <span class="md-dim">bcrypt cost ≥ 12, JWT in httpOnly cookie</span>
 
-<span class="md-warn">⚠</span> <span class="md-label">SQL injection</span>
-  <span class="md-dim">Parameterized queries only</span>
-  <span class="md-dim">No raw SQL string concatenation</span>
+<span class="md-warn">⚠</span> <span class="md-label">Click fraud</span>
+  <span class="md-dim">Rate limit: 100/sec on redirect per IP</span>
+  <span class="md-dim">Auto-alias: min 6 chars (62^6 = 56B)</span>
 
-<span class="md-warn">⚠</span> <span class="md-label">Analytics privacy</span>
-  <span class="md-dim">Anonymize IPs, no fingerprinting</span></code></pre>
+<span class="md-warn">⚠</span> <span class="md-label">IP privacy (GDPR)</span>
+  <span class="md-dim">CLICK_RETENTION_DAYS=90 configurable</span></code></pre>
                   </div>
                   <div class="preview-content" id="preview-6">
                     <pre><code><span class="md-h1"># Progress</span>
@@ -322,9 +324,9 @@ hot path. Redis caching gives &lt;10ms redirects.</code></pre>
 <span class="md-dim">@memory-bank/5-security-requirements.md</span>
 
 <span class="md-h2">## Commands</span>
-<span class="md-label">Run:</span>    bun run dev
-<span class="md-label">Test:</span>   bun test
-<span class="md-label">Build:</span>  bun run build</code></pre>
+<span class="md-label">Run:</span>    go run ./cmd/server
+<span class="md-label">Test:</span>   go test ./...
+<span class="md-label">Build:</span>  docker compose up --build</code></pre>
                   </div>
                 </div>
               </div>
