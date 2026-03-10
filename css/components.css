@@ -398,10 +398,15 @@
     gap: var(--space-sm);
   }
 
+  .cta-block {
+    display: flex;
+  }
+
   .cta-command {
     font-size: var(--text-sm);
     white-space: normal;
-    word-break: break-word;
+    overflow-wrap: anywhere;
+    word-break: break-all;
   }
 
   .feature-card {
