@@ -331,18 +331,18 @@
   gap: var(--space-xs);
   padding: 8px 14px;
   background: var(--accent-glow);
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent);
   border-radius: var(--radius-md);
-  color: var(--text-secondary);
+  color: var(--accent);
   font-size: var(--text-sm);
   font-weight: 500;
   white-space: nowrap;
-  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .cta-copy-btn:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  background: var(--accent-glow-strong);
+  box-shadow: var(--shadow-glow);
 }
 
 .cta-copy-btn.copied {
@@ -400,6 +400,8 @@
 
   .cta-command {
     font-size: var(--text-sm);
+    white-space: normal;
+    word-break: break-word;
   }
 
   .feature-card {

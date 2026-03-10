@@ -81,13 +81,52 @@
     var phasesList = document.getElementById('heroPhaseslist');
     var phases = translations.hero && translations.hero.phases_list;
     if (phasesList && Array.isArray(phases)) {
-      phasesList.innerHTML = '';
+      phasesList.textContent = '';
       phases.forEach(function (text) {
         var li = document.createElement('li');
         li.textContent = text;
         phasesList.appendChild(li);
       });
     }
+
+    // Render artifact previews from locale data
+    renderPreviews();
+  }
+
+  function renderPreviews() {
+    var previews = translations.artifacts && translations.artifacts.previews;
+    if (!previews || !Array.isArray(previews)) return;
+
+    previews.forEach(function (lines, idx) {
+      var container = document.getElementById('preview-' + (idx + 1));
+      if (!container || !Array.isArray(lines)) return;
+
+      var pre = document.createElement('pre');
+      var code = document.createElement('code');
+
+      lines.forEach(function (line, lineIdx) {
+        if (lineIdx > 0) code.appendChild(document.createTextNode('\n'));
+        if (!Array.isArray(line) || line.length === 0) return;
+
+        line.forEach(function (seg) {
+          if (!Array.isArray(seg)) return;
+          var text = seg[0] || '';
+          var style = seg[1];
+          if (style) {
+            var span = document.createElement('span');
+            span.className = 'md-' + style;
+            span.textContent = text;
+            code.appendChild(span);
+          } else {
+            code.appendChild(document.createTextNode(text));
+          }
+        });
+      });
+
+      container.textContent = '';
+      pre.appendChild(code);
+      container.appendChild(pre);
+    });
   }
 
   function setLanguage(lang) {

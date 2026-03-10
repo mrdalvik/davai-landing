@@ -310,7 +310,9 @@
 
   .finder-body {
     display: flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     padding: var(--space-xs) var(--space-sm);
     gap: 2px;
   }
