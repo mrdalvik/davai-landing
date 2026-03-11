@@ -78,6 +78,11 @@
   padding: var(--space-3xl) 0;
 }
 
+.artifacts-container {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
 .artifacts-layout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -86,7 +91,6 @@
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-lg), var(--shadow-glow);
-  max-width: var(--max-width);
 
   --fw-bg: #0C1220;
   --fw-header: #111827;
@@ -301,6 +305,10 @@
 @media (max-width: 768px) {
   .artifacts-layout {
     grid-template-columns: 1fr;
+    /* Remove overflow:hidden so finder-body can scroll horizontally.
+       Use border-radius on children instead for rounded corners. */
+    overflow: visible;
+    border-radius: var(--radius-xl);
   }
 
   .finder-window {
@@ -308,10 +316,15 @@
     border-bottom: 1px solid var(--fw-border);
   }
 
+  .finder-header {
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+
   .finder-body {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     padding: var(--space-xs) var(--space-sm);
     gap: 2px;
@@ -321,6 +334,10 @@
     padding: 6px 10px;
     white-space: nowrap;
     flex-shrink: 0;
+  }
+
+  .preview-window {
+    border-radius: 0 0 var(--radius-xl) var(--radius-xl);
   }
 
   .preview-window {

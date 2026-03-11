@@ -73,6 +73,33 @@
       var v = t(el.getAttribute('data-i18n'));
       if (v) el.textContent = v;
     });
+    // Rich text: supports \n\n (line breaks) and {word} (accent spans)
+    document.querySelectorAll('[data-i18n-rich]').forEach(function (el) {
+      var v = t(el.getAttribute('data-i18n-rich'));
+      if (!v) return;
+      el.textContent = '';
+      var paragraphs = v.split('\n\n');
+      paragraphs.forEach(function (para, i) {
+        if (i > 0) {
+          el.appendChild(document.createElement('br'));
+          el.appendChild(document.createElement('br'));
+        }
+        // Parse {word} as accent spans
+        var parts = para.split(/(\{[^}]+\})/);
+        parts.forEach(function (part) {
+          var m = part.match(/^\{(.+)\}$/);
+          if (m) {
+            var span = document.createElement('span');
+            span.className = 'accent';
+            span.textContent = m[1];
+            el.appendChild(span);
+          } else {
+            el.appendChild(document.createTextNode(part));
+          }
+        });
+      });
+    });
+
     document.documentElement.setAttribute('lang', currentLang);
     var title = t('meta.title');
     if (title) document.title = title;

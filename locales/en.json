@@ -281,8 +281,8 @@
     },
     "stack": {
       "icon": "\uD83E\uDDE9",
-      "title": "Smart Stack Selection",
-      "description": "AI tech lead compares options and picks the optimal stack. With clear reasoning for each decision."
+      "title": "Smart Tech Selection",
+      "description": "AI tech lead compares options and picks the optimal stack, selects skills from the built-in library and generates custom ones for you. You start development with a tailored toolkit — not a blank slate."
     },
     "security": {
       "icon": "\uD83D\uDEE1\uFE0F",
@@ -290,9 +290,21 @@
       "description": "Automated threat modeling and security requirements. Surfaces threats before the first line of code — while they're easy to fix."
     }
   },
+  "faq": {
+    "label": "FAQ",
+    "title": "Questions & Answers",
+    "q1": {
+      "question": "How is Davai better than built-in Plan mode?",
+      "answer": "Plan mode is a single agent thinking in one context window.\n\n{Davai} is a CEO orchestrator that launches a team of specialized subagents — product designer, tech lead, HR, architect, security specialist. Each expert works independently and produces a separate artifact without polluting the shared context. The result: 5 structured documents instead of one long chat thread."
+    },
+    "q2": {
+      "question": "Is it free?",
+      "answer": "Yes! The best payment is your feedback and a star on GitHub."
+    }
+  },
   "cta": {
     "title": "Try it now",
-    "description": "Tell this to your AI agent:",
+    "description": "Paste the text below into your Claude Code or Cursor:",
     "prompt_label": "You:",
     "prompt_text": "Install https://github.com/mrdalvik/davai.git and let\u2019s make a project",
     "copy": "Copy",

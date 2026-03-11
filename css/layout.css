@@ -91,6 +91,13 @@ section {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
   margin-top: var(--space-xl);
+  justify-items: center;
+}
+
+
+/* ── FAQ ── */
+.faq-section {
+  text-align: center;
 }
 
 /* ── CTA ── */
