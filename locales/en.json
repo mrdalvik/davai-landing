@@ -299,7 +299,7 @@
     },
     "q2": {
       "question": "Is it free?",
-      "answer": "Yes! The best payment is your feedback and a star on GitHub."
+      "answer": "Yes! The best payment is your feedback and a [star on GitHub](https://github.com/mrdalvik/davai)."
     }
   },
   "cta": {
@@ -312,7 +312,7 @@
   },
   "footer": {
     "built_by": "Built by",
-    "source": "Source",
-    "meta": "This landing page was built with Davai + Claude Code"
+    "built_with": "with Davai and Claude Code",
+    "source": "Source"
   }
 }

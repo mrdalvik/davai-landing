@@ -84,15 +84,24 @@
           el.appendChild(document.createElement('br'));
           el.appendChild(document.createElement('br'));
         }
-        // Parse {word} as accent spans
-        var parts = para.split(/(\{[^}]+\})/);
+        // Parse {word} as accent spans, [text](url) as links
+        var parts = para.split(/(\{[^}]+\}|\[[^\]]+\]\([^)]+\))/);
         parts.forEach(function (part) {
-          var m = part.match(/^\{(.+)\}$/);
-          if (m) {
+          var accentMatch = part.match(/^\{(.+)\}$/);
+          var linkMatch = part.match(/^\[(.+)\]\((.+)\)$/);
+          if (accentMatch) {
             var span = document.createElement('span');
             span.className = 'accent';
-            span.textContent = m[1];
+            span.textContent = accentMatch[1];
             el.appendChild(span);
+          } else if (linkMatch) {
+            var a = document.createElement('a');
+            a.textContent = linkMatch[1];
+            a.setAttribute('href', linkMatch[2]);
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+            a.className = 'faq-link';
+            el.appendChild(a);
           } else {
             el.appendChild(document.createTextNode(part));
           }
